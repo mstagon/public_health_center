@@ -15,7 +15,7 @@ const Layout = () => {
   const headerText = pageHeaders[location.pathname] || "기본 텍스트";
   return (
     <>
-      <Header text={headerText} />
+      <Header text={headerText} hideBackArrow={location.pathname === "/"} />
       <Outlet />
     </>
   );

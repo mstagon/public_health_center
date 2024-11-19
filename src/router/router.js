@@ -4,7 +4,7 @@ import React, { lazy } from "react";
 import Layout from "../layout/Layout";
 
 const Home = lazy(() => import("../page/home/Home"));
-const CheckIn = lazy(() => import("../page/checkin/CheckIn"));
+const CheckIn = lazy(() => import("../page/checkin/CheckInOneStep"));
 const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -19,6 +19,18 @@ const router = createBrowserRouter([
       },
       {
         path: "consultation",
+      },
+      {
+        path: "acceptance",
+      },
+      {
+        path: "healthProgram",
+      },
+      {
+        path: "floorInformation",
+      },
+      {
+        path: "reservation",
       },
     ],
   },
