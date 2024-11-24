@@ -1,5 +1,5 @@
 import React from "react";
-const NextButton = ({ disabled, onClick }) => {
+const NextButton = ({ disabled, label, onClick }) => {
   return (
     <button
       className={` w-1/3 h-20 text-2xl rounded-xl ${
@@ -8,7 +8,7 @@ const NextButton = ({ disabled, onClick }) => {
       disabled={disabled}
       onClick={onClick}
     >
-      다음
+      {label}
     </button>
   );
 };

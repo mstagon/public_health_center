@@ -4,7 +4,7 @@ import { ReactComponent as Acceptance } from "../../assets/ acceptance.svg";
 import { ReactComponent as Byfloor } from "../../assets/byfloor.svg";
 import { ReactComponent as Medicine } from "../../assets/medicine.svg";
 import { ReactComponent as Reservation } from "../../assets/reservation.svg";
-import CustomButton from "../../components/CustomButton";
+import CircleCustomButton from "../../components/CircleCustomButton";
 import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
@@ -15,17 +15,17 @@ const Home = () => {
   return (
     <>
       <div className="flex justify-center py-10 ">
-        <CustomButton
+        <CircleCustomButton
           label="접수하기"
           icon={CheckIn}
           onClick={() => handlePageChange("/checkIn")}
         />
-        <CustomButton
+        <CircleCustomButton
           label="예약 및 조회"
           icon={Reservation}
           onClick={() => handlePageChange("/reservation")}
         />
-        <CustomButton
+        <CircleCustomButton
           label={
             <>
               최근 진료 및 <br />
@@ -37,17 +37,17 @@ const Home = () => {
         />
       </div>
       <div className="flex justify-center py-10">
-        <CustomButton
+        <CircleCustomButton
           label="층별안내"
           icon={Byfloor}
           onClick={() => handlePageChange("/floorInformation")}
         />
-        <CustomButton
+        <CircleCustomButton
           label="건강 증진 프로그램"
           icon={HealthProgram}
           onClick={() => handlePageChange("/healthProgram")}
         />
-        <CustomButton
+        <CircleCustomButton
           label="수납"
           icon={Acceptance}
           onClick={() => handlePageChange("/acceptance")}

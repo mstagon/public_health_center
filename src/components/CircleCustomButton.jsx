@@ -1,4 +1,4 @@
-const CustomButton = ({ label, icon: Icon, onClick }) => {
+const CircleCustomButton = ({ label, icon: Icon, onClick }) => {
   return (
     <button
       onClick={onClick}
@@ -9,4 +9,5 @@ const CustomButton = ({ label, icon: Icon, onClick }) => {
     </button>
   );
 };
-export default CustomButton;
+
+export default CircleCustomButton;
