@@ -1,7 +1,14 @@
 import NextButton from "./NextButton";
 import React, { useState } from "react";
 
-const InputInformation = ({ text, label, onNext, format }) => {
+const InputInformation = ({
+  text,
+  label,
+  onNext,
+  format,
+  showButton = true,
+  mtClass = "mt-24",
+}) => {
   const [inputValue, setInputValue] = useState("");
 
   const formatPhoneNumber = (value) => {
@@ -37,16 +44,20 @@ const InputInformation = ({ text, label, onNext, format }) => {
   const isButtonActive = inputValue.length > 0;
   return (
     <div className="flex flex-col justify-center items-center gap-10">
-      <div className="font-semibold text-3xl mt-24">{text}을 입력해주세요</div>
+      <div className={`font-semibold text-3xl ${mtClass}`}>
+        {text} 입력해주세요
+      </div>
       <input
         type="text"
         placeholder={text}
-        className="border-b-2 border-[#485FE9] text-3xl w-1/3 size-20 p-5"
+        className="border-b-2 border-[#485FE9] text-3xl min-w-96 size-20 p-5"
         value={inputValue}
         format={formatCase}
         onChange={handleInputChange}
       />
-      <NextButton disabled={!isButtonActive} label={label} onClick={onNext} />
+      {showButton && (
+        <NextButton disabled={!isButtonActive} label={label} onClick={onNext} />
+      )}
     </div>
   );
 };

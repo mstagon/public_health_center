@@ -14,6 +14,8 @@ const Layout = () => {
     "/acceptance": "수납",
     "/floorInformation": "층별 안내",
     "/appointment": "예약하기",
+    "/inquiry": "조회하기",
+    "/reservationDetails": "조회하기",
   };
   const headerText = pageHeaders[location.pathname] || "기본 텍스트";
   return (

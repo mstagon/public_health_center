@@ -2,8 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import React, { lazy } from "react";
 
 import Layout from "../layout/Layout";
+
+const Inquiry = lazy(() => import("../page/reservation/Inquiry"));
 const CheckInThreeStep = lazy(() => import("../page/checkin/CheckInThreeStep"));
 const CheckInTwoStep = lazy(() => import("../page/checkin/CheckInTwoStep"));
+const ReservationDetails = lazy(() =>
+  import("../page/reservation/ReservationDetails")
+);
 const Home = lazy(() => import("../page/home/Home"));
 const CheckIn = lazy(() => import("../page/checkin/CheckInOneStep"));
 const Reservation = lazy(() => import("../page/reservation/Reservation"));
@@ -43,6 +48,14 @@ const router = createBrowserRouter([
       {
         path: "reservation",
         element: <Reservation />,
+      },
+      {
+        path: "inquiry",
+        element: <Inquiry />,
+      },
+      {
+        path: "reservationDetails",
+        element: <ReservationDetails />,
       },
 
       {

@@ -3,7 +3,7 @@ import "./Calendar.css";
 import { useState } from "react";
 import InputInformation from "../../components/InputInformation";
 
-const Appointment = () => {
+const ReservationDetail = () => {
   const [value, onChange] = useState(new Date());
 
   return (
@@ -38,4 +38,4 @@ const Appointment = () => {
   );
 };
 
-export default Appointment;
+export default ReservationDetail;
