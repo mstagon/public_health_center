@@ -3,6 +3,7 @@ import React, { lazy } from "react";
 
 import Layout from "../layout/Layout";
 
+const HealthProgram = lazy(() => import("../page/healthprogram/HealthProgram"));
 const Inquiry = lazy(() => import("../page/reservation/Inquiry"));
 const CheckInThreeStep = lazy(() => import("../page/checkin/CheckInThreeStep"));
 const CheckInTwoStep = lazy(() => import("../page/checkin/CheckInTwoStep"));
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "healthProgram",
+        element: <HealthProgram />,
       },
       {
         path: "floorInformation",
