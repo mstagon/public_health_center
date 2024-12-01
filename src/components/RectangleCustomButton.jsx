@@ -1,3 +1,4 @@
+import React from "react";
 const RectangleCustomButton = ({ label, onClick }) => {
   return (
     <button

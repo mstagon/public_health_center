@@ -1,6 +1,6 @@
 import InputInformation from "../../components/InputInformation";
 import { useOutletContext } from "react-router-dom";
-
+import React from "react";
 import Modal from "../../components/Modal";
 import { useModal } from "../../hooks/useModal";
 const CheckInTwoStep = () => {

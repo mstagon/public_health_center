@@ -1,6 +1,6 @@
 import { useLocation, Outlet } from "react-router-dom";
 import Header from "./Header";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Layout = () => {
   const [user, setUser] = useState({

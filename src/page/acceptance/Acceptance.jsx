@@ -1,6 +1,7 @@
 import InputInformation from "../../components/InputInformation";
 import { useOutletContext } from "react-router-dom";
 import Modal from "../../components/Modal";
+import React from "react";
 import { useModal } from "../../hooks/useModal";
 const Acceptance = () => {
   const { handleCloseModal, handleOpenModal, isModalOpen } = useModal();

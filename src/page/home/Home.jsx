@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactComponent as CheckIn } from "../../assets/checkin.svg";
 import { ReactComponent as HealthProgram } from "../../assets/ healthprogram.svg";
 import { ReactComponent as Acceptance } from "../../assets/ acceptance.svg";

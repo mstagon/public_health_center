@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ReactComponent as Notice } from "../../assets/notice.svg";
-
+import React from "react";
 const HealthProgram = () => {
   const [visibleSection, setVisibleSection] = useState("");
 

@@ -10,9 +10,12 @@ const InputInformation = ({
   showButton = true,
   mtClass = "mt-24",
   field,
+  value,
+  onChange,
+  skipContextUpdate = false,
 }) => {
-  const [inputValue, setInputValue] = useState("");
-  const { user, phoneNumber, updateUser } = useOutletContext();
+  const [inputValue, setInputValue] = useState(value || "");
+  const { updateUser } = useOutletContext();
 
   const formatPhoneNumber = (value) => {
     return value
@@ -29,17 +32,24 @@ const InputInformation = ({
         return value;
     }
   };
+
   const handleInputChange = (e) => {
     const value = e.target.value || "";
     const formatType = formatCase(value, format);
     setInputValue(formatType);
-    if (format === "phone") {
-      updateUser({ [field]: formatType });
+
+    if (onChange) {
+      onChange(formatType);
     }
-    updateUser({ [field]: value });
+
+    if (!skipContextUpdate) {
+      const valueToUpdate = format === "phone" ? formatType : value;
+      updateUser({ [field]: valueToUpdate });
+    }
   };
 
   const isButtonActive = inputValue.length > 0;
+
   return (
     <div className="flex flex-col justify-center items-center gap-10">
       <div className={`font-semibold text-3xl ${mtClass}`}>
@@ -50,7 +60,6 @@ const InputInformation = ({
         placeholder={text}
         className="border-b-2 border-[#485FE9] text-3xl min-w-96 size-20 p-5"
         value={inputValue}
-        format={formatCase}
         onChange={handleInputChange}
       />
       {showButton && (
