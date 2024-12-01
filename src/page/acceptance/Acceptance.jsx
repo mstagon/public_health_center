@@ -2,24 +2,17 @@ import InputInformation from "../../components/InputInformation";
 import { useOutletContext } from "react-router-dom";
 import Modal from "../../components/Modal";
 import { useModal } from "../../hooks/useModal";
-const Inquiry = () => {
-  const { user } = useOutletContext();
+const Acceptance = () => {
   const { handleCloseModal, handleOpenModal, isModalOpen } = useModal();
-  const getVerification = () => {
-    if (!user.phoneNumber) {
-      return <div>등록된 휴대폰 번호가 없습니다.</div>;
+  const { user } = useOutletContext();
+  const getAcceptance = () => {
+    if (user.phoneNumber === "010-1234-5678") {
+      return <div>수납 완료</div>;
     }
-    return (
-      <>
-        예약내역 <br />
-        <br />
-        {user.name}님 <br />
-        {user.appointmentDate}
-      </>
-    );
   };
+
   return (
-    <div className="flex-grow">
+    <div>
       <InputInformation
         text="휴대폰 번호"
         format="phone"
@@ -30,9 +23,9 @@ const Inquiry = () => {
       <Modal
         isOpen={isModalOpen}
         modalClose={handleCloseModal}
-        text={getVerification()}
+        text={getAcceptance()}
       />
     </div>
   );
 };
-export default Inquiry;
+export default Acceptance;

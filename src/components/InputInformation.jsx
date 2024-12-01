@@ -1,3 +1,4 @@
+import { useOutletContext } from "react-router-dom";
 import NextButton from "./NextButton";
 import React, { useState } from "react";
 
@@ -8,8 +9,10 @@ const InputInformation = ({
   format,
   showButton = true,
   mtClass = "mt-24",
+  field,
 }) => {
   const [inputValue, setInputValue] = useState("");
+  const { user, phoneNumber, updateUser } = useOutletContext();
 
   const formatPhoneNumber = (value) => {
     return value
@@ -18,27 +21,22 @@ const InputInformation = ({
       .replace(/(\-{1,2})$/g, "");
   };
 
-  const formatIdNumber = (value) => {
-    value = value.replace(/[^0-9]/g, "");
-    let formattedValue = value.substring(0, 6);
-    if (value.length >= 7) {
-      formattedValue += "-" + value.substring(6, 7) + "******";
-    }
-    return formattedValue;
-  };
   const formatCase = (value, type) => {
     switch (type) {
       case "phone":
         return formatPhoneNumber(value);
-      case "idNumber":
-        return formatIdNumber(value);
       default:
         return value;
     }
   };
   const handleInputChange = (e) => {
-    const formatType = formatCase(e.target.value, format);
+    const value = e.target.value || "";
+    const formatType = formatCase(value, format);
     setInputValue(formatType);
+    if (format === "phone") {
+      updateUser({ [field]: formatType });
+    }
+    updateUser({ [field]: value });
   };
 
   const isButtonActive = inputValue.length > 0;
