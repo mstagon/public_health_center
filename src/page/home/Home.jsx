@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="relative min-h-screen">
       <button 
-        onClick={() => navigate('/settings')}
+        onClick={() => handlePageChange('/settings')}
         className="absolute left-4 bottom-4 p-2 rounded-full hover:bg-gray-100"
       >
         <IoSettingsOutline className="w-6 h-6 text-gray-600" />
@@ -59,7 +59,7 @@ const Home = () => {
         <CircleCustomButton
           label="수납"
           icon={Acceptance}
-          onClick={() => handlePageChange("/acceptance")}
+          onClick={() => navigate("/acceptance")}
         />
       </div>
     </div>

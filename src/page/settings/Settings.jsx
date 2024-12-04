@@ -20,7 +20,6 @@ function Settings() {
         onClick={() => navigate('/')}
         className="absolute top-4 left-4 z-10 p-2 bg-gray-100 rounded-full"
       >
-        ← Back
       </button>
 
       <iframe
