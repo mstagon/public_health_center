@@ -7,8 +7,9 @@ const HealthProgram = lazy(() => import("../page/healthprogram/HealthProgram"));
 const Inquiry = lazy(() => import("../page/reservation/Inquiry"));
 const Acceptance = lazy(() => import("../page/acceptance/Acceptance"));
 const CheckInTwoStep = lazy(() => import("../page/checkin/CheckInTwoStep"));
-
+const Consultation = lazy(() => import("../page/consultation/Consultation"));
 const Home = lazy(() => import("../page/home/Home"));
+const PatientInfo = lazy(() => import("../page/consultation/PatientInfo"));
 const CheckIn = lazy(() => import("../page/checkin/CheckInOneStep"));
 const Reservation = lazy(() => import("../page/reservation/Reservation"));
 const Appointment = lazy(() => import("../page/reservation/Appointment"));
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
 
       {
         path: "consultation",
+        element: <Consultation />,
+      },
+      {
+        path: "patient/:phoneNumber",
+        element: <PatientInfo />,
       },
       {
         path: "acceptance",

@@ -7,6 +7,8 @@ const Layout = () => {
     name: "",
     phoneNumber: "",
     appointmentDate: "",
+    reserveTime: "",
+    reservationDate: "",
   });
 
   const updateUser = (data) => {
@@ -26,8 +28,18 @@ const Layout = () => {
     "/appointment": "예약하기",
     "/inquiry": "조회하기",
     "/reservationDetails": "조회하기",
+    "/patient": "환자 정보",
   };
-  const headerText = pageHeaders[location.pathname] || "기본 텍스트";
+
+  const getHeaderText = () => {
+    if (location.pathname.startsWith("/patient")) {
+      return pageHeaders["/patient"];
+    }
+    return pageHeaders[location.pathname] || "기본 텍스트";
+  };
+
+  const headerText = getHeaderText();
+
   return (
     <>
       <Header text={headerText} hideBackArrow={location.pathname === "/"} />
