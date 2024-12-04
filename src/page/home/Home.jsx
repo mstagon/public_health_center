@@ -59,7 +59,7 @@ const Home = () => {
         <CircleCustomButton
           label="수납"
           icon={Acceptance}
-          onClick={() => navigate("/acceptance")}
+          onClick={() => handlePageChange("/acceptance")}
         />
       </div>
     </div>
