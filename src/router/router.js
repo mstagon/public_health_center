@@ -1,20 +1,66 @@
 import { createBrowserRouter } from "react-router-dom";
-import React, { lazy, Suspense } from "react";
-import Loading from "../components/Loading";
-import Layout from "../layout/Layout";
-const Home = lazy(() => import("../page/home/Home"));
+import React, { lazy } from "react";
 
+import Layout from "../layout/Layout";
+
+const HealthProgram = lazy(() => import("../page/healthprogram/HealthProgram"));
+const Inquiry = lazy(() => import("../page/reservation/Inquiry"));
+const Acceptance = lazy(() => import("../page/acceptance/Acceptance"));
+const CheckInTwoStep = lazy(() => import("../page/checkin/CheckInTwoStep"));
+const Consultation = lazy(() => import("../page/consultation/Consultation"));
+const Home = lazy(() => import("../page/home/Home"));
+const PatientInfo = lazy(() => import("../page/consultation/PatientInfo"));
+const CheckIn = lazy(() => import("../page/checkin/CheckInOneStep"));
+const Reservation = lazy(() => import("../page/reservation/Reservation"));
+const Appointment = lazy(() => import("../page/reservation/Appointment"));
 const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
       {
         path: "",
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Home />
-          </Suspense>
-        ),
+        element: <Home />,
+      },
+      {
+        path: "checkIn",
+        element: <CheckIn />,
+      },
+      {
+        path: "checkInTwoStep",
+        element: <CheckInTwoStep />,
+      },
+
+      {
+        path: "consultation",
+        element: <Consultation />,
+      },
+      {
+        path: "patient/:phoneNumber",
+        element: <PatientInfo />,
+      },
+      {
+        path: "acceptance",
+        element: <Acceptance />,
+      },
+      {
+        path: "healthProgram",
+        element: <HealthProgram />,
+      },
+      {
+        path: "floorInformation",
+      },
+      {
+        path: "reservation",
+        element: <Reservation />,
+      },
+      {
+        path: "inquiry",
+        element: <Inquiry />,
+      },
+
+      {
+        path: "appointment",
+        element: <Appointment />,
       },
     ],
   },

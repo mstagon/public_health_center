@@ -1,18 +1,50 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Outlet } from "react-router-dom";
 import Header from "./Header";
-import { Outlet } from "react-router-dom";
+import React, { useState } from "react";
 
 const Layout = () => {
+  const [user, setUser] = useState({
+    name: "",
+    phoneNumber: "",
+    appointmentDate: "",
+    reserveTime: "",
+    reservationDate: "",
+  });
+
+  const updateUser = (data) => {
+    setUser((prev) => ({ ...prev, ...data }));
+  };
+
   const location = useLocation();
-  const showHeaderPaths = ["/"];
-  const showHeader = showHeaderPaths.includes(location.pathname);
+  const pageHeaders = {
+    "/": "동남구 보건소에 오신 것을 환영합니다.",
+    "/checkIn": "접수하기",
+    "/checkInTwoStep": "접수하기",
+    "/consultation": "최근 진료 및 처방 약품 정보 조회",
+    "/healthProgram": "건강 증진 프로그램",
+    "/reservation": "예약 및 조회",
+    "/acceptance": "수납",
+    "/floorInformation": "층별 안내",
+    "/appointment": "예약하기",
+    "/inquiry": "조회하기",
+    "/reservationDetails": "조회하기",
+    "/patient": "환자 정보",
+  };
+
+  const getHeaderText = () => {
+    if (location.pathname.startsWith("/patient")) {
+      return pageHeaders["/patient"];
+    }
+    return pageHeaders[location.pathname] || "기본 텍스트";
+  };
+
+  const headerText = getHeaderText();
 
   return (
     <>
-      {showHeader && <Header />}
-      <Outlet />
+      <Header text={headerText} hideBackArrow={location.pathname === "/"} />
+      <Outlet context={{ user, updateUser }} />
     </>
   );
 };
-
 export default Layout;
