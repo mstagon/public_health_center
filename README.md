@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# 동남구 보건소 키오스크 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## :book: 소개
 
-## Available Scripts
+동남구 보건소 키오스크 시스템은 보건소 내 업무를 효율화하고 방문자들에게 편리한 서비스를 제공하기 위해 설계되었습니다.  
+React와 Flutter를 사용해 클라이언트를 개발했으며, 백엔드는 FastAPI와 SQLite를 활용하여 경량화된 구조를 제공합니다.
 
-In the project directory, you can run:
+방문자들을 위한 키오스크 인터페이스와 진료 및 예약 그리고 수납등을 관리하기 위한 담당자(의사 혹은 간호사) 인터페이스를 개발 하였습니다.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :rocket: 주요 기능
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **접수 관리**: 현장 접수 및 방문 예약 등록 및 조회
+- **기록 조회**: 잔료 및 처방기록 조회
+- **정보 제공**: 보건소 시설 및 건강 정보 제공
+- **수납**: 수납 기능 제공
+- **사용자 중심**: 키오스크 환경에 최적화된 직관적 UI/UX
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## :tools: 기술 스택
 
-### `npm run build`
+### 프론트엔드
+- **React**: https://github.com/mstagon/public_health_center/
+- **Flutter**: https://github.com/mstagon/flutter-front-back
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 백엔드
+- **FastAPI**: https://github.com/mstagon/phc_backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
