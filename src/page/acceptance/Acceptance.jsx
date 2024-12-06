@@ -1,32 +1,34 @@
-import InputInformation from "../../components/InputInformation";
-import { useOutletContext } from "react-router-dom";
-import Modal from "../../components/Modal";
-import React from "react";
-import { useModal } from "../../hooks/useModal";
-const Acceptance = () => {
-  const { handleCloseModal, handleOpenModal, isModalOpen } = useModal();
-  const { user } = useOutletContext();
-  const getAcceptance = () => {
-    if (user.phoneNumber === "010-1234-5678") {
-      return <div>수납 완료</div>;
-    }
-  };
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+function Acceptance() {
+  const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+  const flutterAcceptanceUrl = process.env.REACT_APP_FLUTTER_ACCEPTANCE_URL;
+
+  console.log('Flutter URL:', flutterAcceptanceUrl);
 
   return (
-    <div>
-      <InputInformation
-        text="휴대폰 번호"
-        format="phone"
-        field="phoneNumber"
-        label="조회"
-        onNext={handleOpenModal}
-      />
-      <Modal
-        isOpen={isModalOpen}
-        modalClose={handleCloseModal}
-        text={getAcceptance()}
+    <div className="w-full h-screen relative">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white">
+          <p>Loading...</p>
+        </div>
+      )}
+
+      <iframe
+        src={flutterAcceptanceUrl}
+        title="Flutter Acceptance"
+        className="w-full h-full border-none"
+        style={{ 
+          width: '100%', 
+          height: '100vh',
+          border: 'none' 
+        }}
+        onLoad={() => setIsLoading(false)}
       />
     </div>
   );
-};
-export default Acceptance;
+}
+
+export default Acceptance; 

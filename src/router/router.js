@@ -13,6 +13,7 @@ const PatientInfo = lazy(() => import("../page/consultation/PatientInfo"));
 const CheckIn = lazy(() => import("../page/checkin/CheckInOneStep"));
 const Reservation = lazy(() => import("../page/reservation/Reservation"));
 const Appointment = lazy(() => import("../page/reservation/Appointment"));
+const Settings = lazy(() => import("../page/settings/Settings"));
 const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
       {
         path: "appointment",
         element: <Appointment />,
+      },
+
+      {
+        path: "settings",
+        element: <Settings />,
       },
     ],
   },

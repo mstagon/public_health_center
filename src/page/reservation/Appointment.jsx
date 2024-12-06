@@ -9,9 +9,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
+
 const Appointment = () => {
   const { user, updateUser } = useOutletContext();
   const [selectedDate, setSelectedDate] = useState(new Date());
+
   const [startDate, setStartDate] = useState(new Date());
   const { handleCloseModal, handleOpenModal, isModalOpen } = useModal();
 

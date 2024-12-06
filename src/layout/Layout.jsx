@@ -9,6 +9,7 @@ const Layout = () => {
     appointmentDate: "",
     reserveTime: "",
     reservationDate: "",
+
   });
 
   const updateUser = (data) => {
@@ -28,8 +29,10 @@ const Layout = () => {
     "/appointment": "예약하기",
     "/inquiry": "조회하기",
     "/reservationDetails": "조회하기",
+    "/settings": "수납자 정보",
     "/patient": "환자 정보",
   };
+
 
   const getHeaderText = () => {
     if (location.pathname.startsWith("/patient")) {

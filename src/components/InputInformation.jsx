@@ -38,6 +38,7 @@ const InputInformation = ({
     const formatType = formatCase(value, format);
     setInputValue(formatType);
 
+
     if (onChange) {
       onChange(formatType);
     }
