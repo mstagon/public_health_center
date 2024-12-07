@@ -9,9 +9,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
+
 const Appointment = () => {
   const { user, updateUser } = useOutletContext();
   const [selectedDate, setSelectedDate] = useState(new Date());
+
   const [startDate, setStartDate] = useState(new Date());
   const { handleCloseModal, handleOpenModal, isModalOpen } = useModal();
 
@@ -67,18 +69,26 @@ const Appointment = () => {
             next2Label={null}
             prev2Label={null}
           />
-          <DatePicker
-            selected={startDate}
-            onChange={handleChangeTime}
-            showTimeSelect
-            showTimeSelectOnly
-            timeIntervals={30}
-            timeFormat="HH:mm"
-            dateFormat="HH:mm"
-            timeCaption="시간"
-            minTime={new Date().setHours(9, 0)}
-            maxTime={new Date().setHours(18, 0)}
-          />
+          <div className="mt-6 p-4 bg-white rounded-lg shadow-md border border-gray-200">
+            <div className="text-lg font-semibold text-gray-800 mb-3">
+              방문 시간
+            </div>
+            <div className="relative">
+              <DatePicker
+                selected={startDate}
+                onChange={handleChangeTime}
+                showTimeSelect
+                showTimeSelectOnly
+                timeIntervals={30}
+                timeFormat="HH:mm"
+                dateFormat="HH:mm"
+                timeCaption="시간"
+                minTime={new Date().setHours(9, 0)}
+                maxTime={new Date().setHours(18, 0)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+              />
+            </div>
+          </div>
         </div>
 
         <div className="flex-grow mt-10">

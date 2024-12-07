@@ -7,6 +7,8 @@ import { ReactComponent as Medicine } from "../../assets/medicine.svg";
 import { ReactComponent as Reservation } from "../../assets/reservation.svg";
 import CircleCustomButton from "../../components/CircleCustomButton";
 import { useNavigate } from "react-router-dom";
+import { IoSettingsOutline } from 'react-icons/io5';
+
 const Home = () => {
   const navigate = useNavigate();
   const handlePageChange = (path) => {
@@ -14,7 +16,13 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="relative min-h-screen">
+      <button 
+        onClick={() => handlePageChange('/settings')}
+        className="absolute left-4 bottom-4 p-2 rounded-full hover:bg-gray-100"
+      >
+        <IoSettingsOutline className="w-6 h-6 text-gray-600" />
+      </button>
       <div className="flex justify-center py-10 ">
         <CircleCustomButton
           label="접수하기"
@@ -54,7 +62,7 @@ const Home = () => {
           onClick={() => handlePageChange("/acceptance")}
         />
       </div>
-    </>
+    </div>
   );
 };
 export default Home;

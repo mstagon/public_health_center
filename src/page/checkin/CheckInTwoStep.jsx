@@ -1,5 +1,6 @@
 import InputInformation from "../../components/InputInformation";
 import { useOutletContext } from "react-router-dom";
+import React from "react";
 import axios from "axios";
 import Modal from "../../components/Modal";
 import { useModal } from "../../hooks/useModal";
@@ -7,7 +8,6 @@ import { useModal } from "../../hooks/useModal";
 const CheckInTwoStep = () => {
   const { handleCloseModal, handleOpenModal, isModalOpen } = useModal();
   const { user } = useOutletContext();
-
   const handleCheckIn = async () => {
     const offset = new Date().getTimezoneOffset() * 60000;
     const today = new Date(Date.now() - offset);
@@ -49,5 +49,4 @@ const CheckInTwoStep = () => {
     </>
   );
 };
-
 export default CheckInTwoStep;

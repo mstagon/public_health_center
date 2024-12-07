@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Acceptance() {
+function Floor() {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
-  const flutterAcceptanceUrl = process.env.REACT_APP_FLUTTER_ACCEPTANCE_URL;
+  const flutterFloorUrl = process.env.REACT_APP_FLUTTER_FLOOR_URL;
 
-  console.log('Flutter URL:', flutterAcceptanceUrl);
+  console.log('Flutter URL:', flutterFloorUrl);
 
   return (
     <div className="w-full h-screen relative">
@@ -17,8 +17,8 @@ function Acceptance() {
       )}
 
       <iframe
-        src={flutterAcceptanceUrl}
-        title="Flutter Acceptance"
+        src={flutterFloorUrl}
+        title="Flutter Floor"
         className="w-full h-full border-none"
         style={{ 
           width: '100%', 
@@ -31,4 +31,4 @@ function Acceptance() {
   );
 }
 
-export default Acceptance; 
+export default Floor; 

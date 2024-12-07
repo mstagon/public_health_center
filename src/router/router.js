@@ -6,6 +6,7 @@ import Layout from "../layout/Layout";
 const HealthProgram = lazy(() => import("../page/healthprogram/HealthProgram"));
 const Inquiry = lazy(() => import("../page/reservation/Inquiry"));
 const Acceptance = lazy(() => import("../page/acceptance/Acceptance"));
+const Floor = lazy(() => import("../page/floorinfo/floorinfo"));
 const CheckInTwoStep = lazy(() => import("../page/checkin/CheckInTwoStep"));
 const Consultation = lazy(() => import("../page/consultation/Consultation"));
 const Home = lazy(() => import("../page/home/Home"));
@@ -13,6 +14,7 @@ const PatientInfo = lazy(() => import("../page/consultation/PatientInfo"));
 const CheckIn = lazy(() => import("../page/checkin/CheckInOneStep"));
 const Reservation = lazy(() => import("../page/reservation/Reservation"));
 const Appointment = lazy(() => import("../page/reservation/Appointment"));
+const Settings = lazy(() => import("../page/settings/Settings"));
 const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -48,6 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "floorInformation",
+        element: <Floor />,
       },
       {
         path: "reservation",
@@ -61,6 +64,11 @@ const router = createBrowserRouter([
       {
         path: "appointment",
         element: <Appointment />,
+      },
+
+      {
+        path: "settings",
+        element: <Settings />,
       },
     ],
   },

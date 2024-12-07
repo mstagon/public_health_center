@@ -3,12 +3,14 @@ import { ReactComponent as BackArrow } from "../assets/backarrow.svg";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal.jsx";
 import { useModal } from "../hooks/useModal";
+
 const Header = ({ text, hideBackArrow }) => {
   const navigate = useNavigate();
   const handleBackPage = () => {
     navigate(-1);
   };
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
+
   return (
     <>
       <div className="flex items-center justify-between p-5">
