@@ -7,7 +7,7 @@ import { useModal } from "../hooks/useModal";
 const Header = ({ text, hideBackArrow }) => {
   const navigate = useNavigate();
   const handleBackPage = () => {
-    navigate(-1);
+    navigate("/");
   };
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
 
